@@ -11,7 +11,13 @@ package shoppingCart
  *   5 -> { "name"="Wireless Mouse", "price"=8.500, "stock"=15 },
  */
 fun createStoreInventory(): MutableMap<Int, MutableMap<String, Any>> {
-    TODO("Implement createStoreInventory()")
+    return mutableMapOf(
+        1 to mutableMapOf("name" to "Laptop", "price" to 350.000, "stock" to 10),
+        2 to mutableMapOf("name" to "Smart TV", "price" to 200.000, "stock" to 5),
+        3 to mutableMapOf("name" to "Headphones", "price" to 50.000, "stock" to 20),
+        4 to mutableMapOf("name" to "Gaming Console", "price" to 150.000, "stock" to 8),
+        5 to mutableMapOf("name" to "Wireless Mouse", "price" to 8.500, "stock" to 15 )
+    )
 }
 
 /**
@@ -25,7 +31,14 @@ fun addToCart(
     productId: Int,
     quantity: Int
 ): Boolean {
-    TODO("Implement addToCart()")
+    val productStock = storeInventory[productId]?.get("stock")?.toString()?.toInt() ?: return false
+    if(productStock >= quantity){
+        storeInventory[productId]?.set("stock", productStock - quantity)
+        cart[productId] = quantity
+        return true
+    } else{
+        return false
+    }
 }
 
 /**
