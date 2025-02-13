@@ -2,22 +2,31 @@ name: Build and Test
 
 on:
   pull_request:
-    branches: [ "main" ]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: temurin
-          java-version: 17
+          distribution: 'temurin'
+          java-version: '17'
 
       - name: Grant execute permission for Gradlew
         run: chmod +x gradlew
 
       - name: Build and Test with Gradle
         run: ./gradlew clean test --console=plain
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        with:
+          name: 'JUnit Tests'
+          path: '**/build/test-results/test/*.xml'
+          reporter: 'junit'
+          fail-on-error: true
+          require-tests: true
