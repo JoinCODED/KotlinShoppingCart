@@ -11,8 +11,25 @@ package shoppingCart
  *   5 -> { "name"="Wireless Mouse", "price"=8.500, "stock"=15 },
  */
 fun createStoreInventory(): MutableMap<Int, MutableMap<String, Any>> {
-    TODO("Implement createStoreInventory()")
+     val product1 = mutableMapOf("name" to "Laptop", "price" to 350.00, "stock" to 10)
+   val  product2 = mutableMapOf("name" to "Smart TV", "price" to 200.00, "stock" to 5)
+   val  product3 = mutableMapOf("name" to "Headphones", "price" to 50.00, "stock" to 20)
+    val product4 = mutableMapOf("name" to "Gaming Console", "price" to 150.00, "stock" to 8)
+    val product5 = mutableMapOf("name" to "Wireless Mouse", "price" to 8.500, "stock" to 15)
+
+    val productId = mutableMapOf(1 to product1, 2 to product2, 3 to product3, 4 to product4, 5 to product5)
+
+    return productId as MutableMap<Int, MutableMap<String, Any>>
+
+
+
 }
+
+   // val productId = mutableMapOf(1 to product1, 2 to product2, 3 to product3, 4 to product4, 5 to product5)
+
+
+
+
 
 /**
  * Tries to add [quantity] of [productId] to [cart], if there's enough stock in [storeInventory].
@@ -25,7 +42,33 @@ fun addToCart(
     productId: Int,
     quantity: Int
 ): Boolean {
-    TODO("Implement addToCart()")
+
+//    if(quantity )
+    if (!storeInventory.containsKey(productId))
+    { return false }
+    val pId =storeInventory.getValue(productId)
+    var numOfStock = pId.getValue("stock") as Int       // quantity of product
+
+    if (numOfStock >= quantity) {
+
+        if (!cart.containsKey(productId))
+        {
+            cart.put(productId, quantity)
+        }
+       var oldQuantity = cart.getValue(productId)
+        var newQuantity = oldQuantity + quantity
+        cart.put(productId,newQuantity )
+        var newStock = numOfStock - quantity
+        pId.replace("stock", newStock)
+        storeInventory.get(productId)?.set("stock",newStock)
+//        pId.set("stock",newStock)
+        return true
+
+    }else
+        return false
+
+
+
 }
 
 /**
@@ -39,7 +82,31 @@ fun removeFromCart(
     productId: Int,
     quantity: Int
 ): Boolean {
-    TODO("Implement removeFromCart()")
+    if (!cart.containsKey(productId))   // I dont have product
+    {return false  }
+
+
+    var castomerQuantity = cart.getValue(productId)
+    if (castomerQuantity < quantity)  {
+        return false
+    }
+    if (castomerQuantity >= quantity)  //  I  have product
+    {
+        castomerQuantity -= quantity
+
+        cart.replace(productId,castomerQuantity )   // new quantity in cart
+
+        val pId =storeInventory.getValue(productId)
+        var newStock = pId.getValue("stock") as Int
+        newStock += quantity
+        storeInventory.get(productId)?.set("stock",newStock)    // new quantity for store
+
+        return true
+
+    }
+    else
+    {   return false}
+
 }
 
 /**
