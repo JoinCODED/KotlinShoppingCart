@@ -11,7 +11,13 @@ package shoppingCart
  *   5 -> { "name"="Wireless Mouse", "price"=8.500, "stock"=15 },
  */
 fun createStoreInventory(): MutableMap<Int, MutableMap<String, Any>> {
-    TODO("Implement createStoreInventory()")
+    return mutableMapOf(
+        1 to mutableMapOf("name" to "Laptop", "price" to 350.000, "Stock" to 10),
+        2 to mutableMapOf("name" to "Smart TV", "price" to 200.000, "Stock" to 5),
+        3 to mutableMapOf("name" to "Headphones", "price" to 50.000, "Stock" to 20),
+        4 to mutableMapOf("name" to "Gaming Console", "price" to 150.000, "Stock" to 8),
+        5 to mutableMapOf("name" to "Wireless Mouse", "price" to 8.500, "Stock" to 15),
+    )
 }
 
 /**
@@ -25,7 +31,20 @@ fun addToCart(
     productId: Int,
     quantity: Int
 ): Boolean {
-    TODO("Implement addToCart()")
+
+
+    if (storeInventory.keys.find { it == productId } == null) {
+        return false
+    } else {
+        var productStock= (storeInventory.get(productId)?.get("Stock") as Int)
+        if (productStock >= quantity) {
+            cart[productId] = quantity
+            storeInventory[productId]?.set("Stock",(productStock-quantity))
+            cart[productId] = (cart[productId] as Int + quantity)
+        }
+        return true
+    }
+
 }
 
 /**
@@ -39,7 +58,16 @@ fun removeFromCart(
     productId: Int,
     quantity: Int
 ): Boolean {
-    TODO("Implement removeFromCart()")
+    if (storeInventory.keys.find { it == productId } == null) {
+        return false
+    } else {
+        var productStock= (storeInventory[productId]?.get("Stock") as Int)
+            cart.remove(productId, quantity)
+            storeInventory[productId]?.set("Stock",(productStock+quantity))
+            cart[productId] = (cart[productId] as Int - quantity)
+        return true
+    }
+
 }
 
 /**
@@ -51,8 +79,13 @@ fun calculateTotal(
     storeInventory: MutableMap<Int, MutableMap<String, Any>>,
     cart: MutableMap<Int, Int>
 ): Double {
-    TODO("Implement calculateTotal()")
-}
+        return cart.keys.sumOf { productId ->
+            val quantity = cart[productId] ?: 0
+            val price = storeInventory[productId]?.get("price") as Double ?: 0.0
+            price * quantity
+        }
+    }
+
 
 /**
  * Returns a list of product IDs whose "name" contains [keyword].
