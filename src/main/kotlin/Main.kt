@@ -144,7 +144,16 @@ fun filterProductsByName(
     storeInventory: MutableMap<Int, MutableMap<String, Any>>,
     keyword: String
 ): List<Int> {
-    TODO("Implement filterProductsByName()")
+
+    var name = storeInventory
+
+
+    for ((name) in storeInventory)
+    {
+       name.values
+    }
+
+
 }
 
 /**
@@ -155,7 +164,7 @@ fun main() {
     println("Welcome to the Kotlin Store project!")
     println("All functions currently throw NotImplementedError.")
     println("Open each function and replace TODO(...) with your implementation.")
-    createStoreInventory()
+    println( createStoreInventory().values)
 
 
 
