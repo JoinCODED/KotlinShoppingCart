@@ -104,6 +104,7 @@ fun calculateTotal(
 ): Double {
 //val total = 0
 //cart.forEach(entry -> entry.value )
+    TODO("Implement filterProductsByName()")
 
 // cart.forEach{item -> storeInventory.keys.find {  }}
 }

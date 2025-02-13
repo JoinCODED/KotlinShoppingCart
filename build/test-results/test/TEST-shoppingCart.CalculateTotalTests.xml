@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="shoppingCart.CalculateTotalTests" tests="3" skipped="0" failures="3" errors="0" timestamp="2025-02-13T17:22:12" hostname="Fs-MacBook-Pro" time="0.016">
+<testsuite name="shoppingCart.CalculateTotalTests" tests="3" skipped="0" failures="3" errors="0" timestamp="2025-02-13T17:29:02" hostname="Fs-MacBook-Pro" time="0.018">
   <properties/>
-  <testcase name="1) Total is 0.0 if cart is empty" classname="shoppingCart.CalculateTotalTests" time="0.012">
+  <testcase name="1) Total is 0.0 if cart is empty" classname="shoppingCart.CalculateTotalTests" time="0.015">
     <failure message="kotlin.NotImplementedError: An operation is not implemented: Implement filterProductsByName()" type="kotlin.NotImplementedError">kotlin.NotImplementedError: An operation is not implemented: Implement filterProductsByName()
 	at shoppingCart.MainKt.calculateTotal(Main.kt:107)
 	at shoppingCart.CalculateTotalTests.testEmptyCart(CalculateTotalTests.kt:24)
