@@ -6,7 +6,6 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
 
@@ -19,10 +18,14 @@ jobs:
       - name: Grant execute permission for Gradlew
         run: chmod +x gradlew
 
+      # 1) Run tests but *don't* stop if they fail
       - name: Build and Test with Gradle
         run: ./gradlew clean test --console=plain
+        continue-on-error: true
 
-      - name: Test Report
+      # 2) Always run the test-reporter step, even if previous step failed
+      - name: JUnit Test Reporter
+        if: always()
         uses: dorny/test-reporter@v1
         with:
           name: 'JUnit Tests'
