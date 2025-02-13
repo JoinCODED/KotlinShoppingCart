@@ -11,7 +11,22 @@ package shoppingCart
  *   5 -> { "name"="Wireless Mouse", "price"=8.500, "stock"=15 },
  */
 fun createStoreInventory(): MutableMap<Int, MutableMap<String, Any>> {
-    TODO("Implement createStoreInventory()")
+    val listOfInnerMap: MutableList<MutableMap<String, Any>> = mutableListOf(
+        mutableMapOf("name" to "Laptop", "price" to 350.000, "stock" to 10),
+        mutableMapOf("name" to "Smart TV", "price" to 200.000, "stock" to 5),
+        mutableMapOf("name" to "Headphones", "price" to 50.000, "stock" to 20),
+        mutableMapOf("name" to "Gaming Console", "price" to 150.000, "stock" to 8),
+        mutableMapOf("name" to "Wireless Mouse", "price" to 8.500, "stock" to 15))
+
+    var storeInventory: MutableMap<Int, MutableMap<String, Any>> = mutableMapOf()
+
+    var index = 1
+    for(list in listOfInnerMap) {
+        storeInventory[index] = list
+        index++
+    }
+
+    return storeInventory
 }
 
 /**
@@ -25,7 +40,19 @@ fun addToCart(
     productId: Int,
     quantity: Int
 ): Boolean {
-    TODO("Implement addToCart()")
+    if(storeInventory.contains(productId)) {
+        if(storeInventory[productId]!!.get("stock") as Int >= quantity) {
+            var newStock = storeInventory[productId]!!.get("stock") as Int - quantity
+            storeInventory[productId]!!.set("stock", newStock)
+            if(cart.contains(productId)){
+                cart[productId] = quantity + cart[productId] as Int
+            } else {
+                cart[productId] = quantity
+            }
+            return true
+        }
+    }
+    return  false
 }
 
 /**
@@ -39,7 +66,25 @@ fun removeFromCart(
     productId: Int,
     quantity: Int
 ): Boolean {
-    TODO("Implement removeFromCart()")
+    if (cart.contains(productId)) {
+        if (cart.get(productId) as Int >= quantity) {
+            var newStock = storeInventory[productId]!!.get("stock") as Int + quantity
+            storeInventory[productId]!!.set("stock", newStock)
+            var newCart = cart.get(productId) as Int - quantity
+            if (newCart == 0) {
+                cart.remove(productId)
+                if (cart.isEmpty()) {
+                    return true
+                } else {
+                    return false
+                }
+            } else {
+                cart.set(productId, newCart)
+            }
+            return true
+        }
+    }
+    return  false
 }
 
 /**
@@ -51,7 +96,24 @@ fun calculateTotal(
     storeInventory: MutableMap<Int, MutableMap<String, Any>>,
     cart: MutableMap<Int, Int>
 ): Double {
-    TODO("Implement calculateTotal()")
+    var totalPrice: Double = 0.0
+    var list: MutableList<Int> = mutableListOf()
+    for (item in cart) {
+        list.add(item.value)
+    }
+
+    var prices: MutableList<Double> = mutableListOf()
+
+    for (item in storeInventory) {
+        prices.add(item.value.get("price") as Double)
+    }
+
+    var index = 0
+    for (quantity in list) {
+        totalPrice = totalPrice + (quantity * prices[index])
+        index++
+    }
+    return totalPrice
 }
 
 /**
@@ -63,7 +125,15 @@ fun filterProductsByName(
     storeInventory: MutableMap<Int, MutableMap<String, Any>>,
     keyword: String
 ): List<Int> {
-    TODO("Implement filterProductsByName()")
+    val productIdFound: MutableList<Int> = mutableListOf()
+    for ((productId: Int, product: MutableMap<String, Any>) in storeInventory) {
+        if (product.containsKey("name")) {
+            if (product["name"].toString().lowercase().contains(keyword.lowercase())){
+                productIdFound.add(productId)
+            }
+        }
+    }
+    return productIdFound
 }
 
 /**
@@ -71,6 +141,11 @@ fun filterProductsByName(
  * Run the JUnit tests to see if you've implemented each function correctly.
  */
 fun main() {
+    val storeInventory = createStoreInventory()
+    val cart: MutableMap<Int, Int> = mutableMapOf(1 to 0, 2 to 0, 3 to 0)
+    if (addToCart(storeInventory, cart, 1, 3)) {
+        println("Sold!!")
+    }
     println("Welcome to the Kotlin Store project!")
     println("All functions currently throw NotImplementedError.")
     println("Open each function and replace TODO(...) with your implementation.")
