@@ -28,7 +28,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">20</div>
+<div class="counter">7</div>
 <p>failures</p>
 </div>
 </td>
@@ -40,7 +40,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.123s</div>
+<div class="counter">0.033s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,7 +50,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="percent">65%</div>
 <p>successful</p>
 </div>
 </td>
@@ -70,22 +70,6 @@
 <h2>Failed tests</h2>
 <ul class="linkList">
 <li>
-<a href="../classes/shoppingCart.AddToCartTests.html">AddToCartTests</a>.
-<a href="../classes/shoppingCart.AddToCartTests.html#testAddExceedingStock()">4) Attempting to add more than available stock should fail</a>
-</li>
-<li>
-<a href="../classes/shoppingCart.AddToCartTests.html">AddToCartTests</a>.
-<a href="../classes/shoppingCart.AddToCartTests.html#testAddMultipleTimes()">2) Adding multiple times accumulates in cart</a>
-</li>
-<li>
-<a href="../classes/shoppingCart.AddToCartTests.html">AddToCartTests</a>.
-<a href="../classes/shoppingCart.AddToCartTests.html#testAddNonExistentProduct()">3) Attempting to add a product with ID that doesn't exist</a>
-</li>
-<li>
-<a href="../classes/shoppingCart.AddToCartTests.html">AddToCartTests</a>.
-<a href="../classes/shoppingCart.AddToCartTests.html#testAddToCartValid()">1) Valid add to cart (small quantity within stock)</a>
-</li>
-<li>
 <a href="../classes/shoppingCart.CalculateTotalTests.html">CalculateTotalTests</a>.
 <a href="../classes/shoppingCart.CalculateTotalTests.html#testEmptyCart()">1) Total is 0.0 if cart is empty</a>
 </li>
@@ -96,26 +80,6 @@
 <li>
 <a href="../classes/shoppingCart.CalculateTotalTests.html">CalculateTotalTests</a>.
 <a href="../classes/shoppingCart.CalculateTotalTests.html#testSingleItem()">2) Single item in cart calculates correctly</a>
-</li>
-<li>
-<a href="../classes/shoppingCart.CreateStoreInventoryTests.html">CreateStoreInventoryTests</a>.
-<a href="../classes/shoppingCart.CreateStoreInventoryTests.html#testContainsRequiredIds()">3) Contains required product IDs (1..5)</a>
-</li>
-<li>
-<a href="../classes/shoppingCart.CreateStoreInventoryTests.html">CreateStoreInventoryTests</a>.
-<a href="../classes/shoppingCart.CreateStoreInventoryTests.html#testInventoryNotEmpty()">1) Inventory is not empty</a>
-</li>
-<li>
-<a href="../classes/shoppingCart.CreateStoreInventoryTests.html">CreateStoreInventoryTests</a>.
-<a href="../classes/shoppingCart.CreateStoreInventoryTests.html#testInventorySize()">2) Inventory has exactly 5 items</a>
-</li>
-<li>
-<a href="../classes/shoppingCart.CreateStoreInventoryTests.html">CreateStoreInventoryTests</a>.
-<a href="../classes/shoppingCart.CreateStoreInventoryTests.html#testNoUnexpectedIds()">4) No extra product IDs beyond the required five</a>
-</li>
-<li>
-<a href="../classes/shoppingCart.CreateStoreInventoryTests.html">CreateStoreInventoryTests</a>.
-<a href="../classes/shoppingCart.CreateStoreInventoryTests.html#testProductsHaveCorrectAttributes()">5) Each product has the correct name, price, and stock</a>
 </li>
 <li>
 <a href="../classes/shoppingCart.FilterProductsByNameTests.html">FilterProductsByNameTests</a>.
@@ -133,22 +97,6 @@
 <a href="../classes/shoppingCart.FilterProductsByNameTests.html">FilterProductsByNameTests</a>.
 <a href="../classes/shoppingCart.FilterProductsByNameTests.html#testPartialSubstring()">2) Partial substring match is case-insensitive</a>
 </li>
-<li>
-<a href="../classes/shoppingCart.RemoveFromCartTests.html">RemoveFromCartTests</a>.
-<a href="../classes/shoppingCart.RemoveFromCartTests.html#testRemoveAllItems()">2) Removing the full amount removes item from cart</a>
-</li>
-<li>
-<a href="../classes/shoppingCart.RemoveFromCartTests.html">RemoveFromCartTests</a>.
-<a href="../classes/shoppingCart.RemoveFromCartTests.html#testRemoveExceedingCartQuantity()">3) Removing more than in cart should fail</a>
-</li>
-<li>
-<a href="../classes/shoppingCart.RemoveFromCartTests.html">RemoveFromCartTests</a>.
-<a href="../classes/shoppingCart.RemoveFromCartTests.html#testRemoveNonExistentInCart()">4) Removing a product that isn't in the cart should fail</a>
-</li>
-<li>
-<a href="../classes/shoppingCart.RemoveFromCartTests.html">RemoveFromCartTests</a>.
-<a href="../classes/shoppingCart.RemoveFromCartTests.html#testRemoveValidQuantity()">1) Removing a valid quantity updates cart and stock</a>
-</li>
 </ul>
 </div>
 <div id="tab1" class="tab">
@@ -165,14 +113,14 @@
 </tr>
 </thead>
 <tr>
-<td class="failures">
+<td class="success">
 <a href="../classes/shoppingCart.AddToCartTests.html">AddToCartTests</a>
 </td>
 <td>4</td>
-<td>4</td>
 <td>0</td>
-<td>0.029s</td>
-<td class="failures">0%</td>
+<td>0</td>
+<td>0.003s</td>
+<td class="success">100%</td>
 </tr>
 <tr>
 <td class="failures">
@@ -181,18 +129,18 @@
 <td>3</td>
 <td>3</td>
 <td>0</td>
-<td>0.004s</td>
+<td>0.014s</td>
 <td class="failures">0%</td>
 </tr>
 <tr>
-<td class="failures">
+<td class="success">
 <a href="../classes/shoppingCart.CreateStoreInventoryTests.html">CreateStoreInventoryTests</a>
 </td>
 <td>5</td>
-<td>5</td>
 <td>0</td>
-<td>0.042s</td>
-<td class="failures">0%</td>
+<td>0</td>
+<td>0.012s</td>
+<td class="success">100%</td>
 </tr>
 <tr>
 <td class="failures">
@@ -201,18 +149,18 @@
 <td>4</td>
 <td>4</td>
 <td>0</td>
-<td>0.018s</td>
+<td>0.003s</td>
 <td class="failures">0%</td>
 </tr>
 <tr>
-<td class="failures">
+<td class="success">
 <a href="../classes/shoppingCart.RemoveFromCartTests.html">RemoveFromCartTests</a>
 </td>
 <td>4</td>
-<td>4</td>
 <td>0</td>
-<td>0.030s</td>
-<td class="failures">0%</td>
+<td>0</td>
+<td>0.001s</td>
+<td class="success">100%</td>
 </tr>
 </table>
 </div>
@@ -224,7 +172,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.12.1</a> at 13 Feb 2025, 14:10:59</p>
+<a href="http://www.gradle.org">Gradle 8.12.1</a> at Feb 13, 2025, 8:22:12 PM</p>
 </div>
 </div>
 </body>

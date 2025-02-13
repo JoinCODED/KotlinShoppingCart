@@ -11,7 +11,9 @@ package shoppingCart
  *   5 -> { "name"="Wireless Mouse", "price"=8.500, "stock"=15 },
  */
 fun createStoreInventory(): MutableMap<Int, MutableMap<String, Any>> {
-    TODO("Implement createStoreInventory()")
+
+   return mutableMapOf(1 to mutableMapOf("name" to "Laptop", "price" to 350.000, "stock" to 10 ), 2 to mutableMapOf("name" to "Smart TV", "price" to 200.000, "stock" to 5 ), 3 to mutableMapOf("name" to "Headphones", "price" to 50.000, "stock" to 20 ), 4 to mutableMapOf("name" to "Gaming Console", "price" to 150.000, "stock" to 8 ), 5 to mutableMapOf("name" to "Wireless Mouse", "price" to 8.500, "stock" to 15 ))
+
 }
 
 /**
@@ -25,7 +27,34 @@ fun addToCart(
     productId: Int,
     quantity: Int
 ): Boolean {
-    TODO("Implement addToCart()")
+
+    val product = storeInventory.filter { it.key == productId }
+    var isProduct = product.get(productId)
+    if(isProduct == null){
+        return false
+    }
+        if (product.get(productId)?.get("stock") as Int >= quantity)
+        {
+
+            if(cart.get(productId) != null ){
+
+                var oldQuant = cart.get(productId)!!;
+
+                cart.put(productId,oldQuant+ quantity )
+
+            }else{
+                cart.put(productId, quantity )
+
+            }
+            storeInventory.get(productId)?.set("stock", product.get(productId)?.get("stock") as Int - quantity)
+            return true
+        }
+        else
+        {
+            return false
+        }
+
+
 }
 
 /**
@@ -39,8 +68,30 @@ fun removeFromCart(
     productId: Int,
     quantity: Int
 ): Boolean {
-    TODO("Implement removeFromCart()")
+
+
+        if(cart.get(productId) != null ){
+            if (cart.get(productId) as Int >= quantity) {
+                var oldQuant = cart.get(productId)!!;
+                cart.put(productId, oldQuant - quantity)
+                if (cart.get(productId) == 0)
+                {
+                    cart.remove(productId)
+                }
+                val product = storeInventory.filter { it.key == productId }
+                storeInventory.get(productId)?.set("stock", product.get(productId)?.get("stock") as Int + quantity)
+                return true
+            }
+        }
+        else {
+return false
+
 }
+    return false
+}
+
+
+
 
 /**
  * Calculates the total cost of items in [cart].
@@ -51,7 +102,10 @@ fun calculateTotal(
     storeInventory: MutableMap<Int, MutableMap<String, Any>>,
     cart: MutableMap<Int, Int>
 ): Double {
-    TODO("Implement calculateTotal()")
+//val total = 0
+//cart.forEach(entry -> entry.value )
+
+// cart.forEach{item -> storeInventory.keys.find {  }}
 }
 
 /**
