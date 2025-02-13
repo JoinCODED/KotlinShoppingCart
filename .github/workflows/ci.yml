@@ -25,11 +25,10 @@ jobs:
 
       # 2) Always run the test-reporter step, even if previous step failed
       - name: JUnit Test Reporter
-        if: always()
         uses: dorny/test-reporter@v1
         with:
           name: 'JUnit Tests'
           path: '**/build/test-results/test/*.xml'
-          reporter: 'junit'
+          reporter: 'mocha'
           fail-on-error: true
-          require-tests: true
+          fail-on-empty: true
