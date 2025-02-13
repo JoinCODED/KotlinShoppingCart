@@ -11,6 +11,7 @@ package shoppingCart
  *   5 -> { "name"="Wireless Mouse", "price"=8.500, "stock"=15 },
  */
 fun createStoreInventory(): MutableMap<Int, MutableMap<String, Any>> {
+    println("Hello")
     TODO("Implement createStoreInventory()")
 }
 
