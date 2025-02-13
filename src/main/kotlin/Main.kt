@@ -79,23 +79,23 @@ fun removeFromCart(
     quantity: Int
 ): Boolean {
 
-    val cartQuantity = cart[productId]?: 0
+    val currentQuantityInCart = cart[productId] ?: return false
 
-    if (cartQuantity == productId) {
-        if (cartQuantity >= quantity) {
-
-
-            return true
-
-        } else {
-
-            return false
-        }
-    } else {
+    if (currentQuantityInCart < quantity) {
         return false
     }
-}
 
+    cart[productId] = currentQuantityInCart - quantity
+
+    val currentStock = storeInventory[productId]?.get("stock").toString().toInt()
+    storeInventory[productId]?.set("stock", currentStock + quantity)
+
+    if (cart[productId] == 0) {
+        cart.remove(productId)
+    }
+
+    return true
+}
 
 /**
  * Calculates the total cost of items in [cart].
@@ -106,7 +106,25 @@ fun calculateTotal(
     storeInventory: MutableMap<Int, MutableMap<String, Any>>,
     cart: MutableMap<Int, Int>
 ): Double {
-    TODO("Implement calculateTotal()")
+
+    var totalPrice = 0.0
+
+    if (cart.isEmpty())
+    {
+        totalPrice = 0.0
+
+        return  totalPrice
+    }
+    else
+    {
+            for ((productId, quantity) in cart) {
+                val itemPrice = storeInventory[productId]?.get("price").toString().toDouble()
+                totalPrice +=  itemPrice.toString().toDouble() * quantity
+            }
+
+            return totalPrice
+
+    }
 }
 
 /**
@@ -118,7 +136,20 @@ fun filterProductsByName(
     storeInventory: MutableMap<Int, MutableMap<String, Any>>,
     keyword: String
 ): List<Int> {
-    TODO("Implement filterProductsByName()")
+
+    val matchingProductIds = mutableListOf<Int>()
+
+    val lowerCaseKeyword = keyword.lowercase()
+    
+    for ((productId, productDetails) in storeInventory) {
+
+        val productName = productDetails["name"].toString()
+        if (productName.lowercase().contains(lowerCaseKeyword)) {
+            matchingProductIds.add(productId)
+        }
+    }
+
+    return matchingProductIds
 }
 
 /**
