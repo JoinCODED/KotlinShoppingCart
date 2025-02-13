@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="shoppingCart.CreateStoreInventoryTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-02-13T21:17:54" hostname="Mac" time="0.008">
+<testsuite name="shoppingCart.CreateStoreInventoryTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-02-13T21:27:17" hostname="Mac" time="0.008">
   <properties/>
-  <testcase name="1) Inventory is not empty" classname="shoppingCart.CreateStoreInventoryTests" time="0.001"/>
+  <testcase name="1) Inventory is not empty" classname="shoppingCart.CreateStoreInventoryTests" time="0.0"/>
   <testcase name="2) Inventory has exactly 5 items" classname="shoppingCart.CreateStoreInventoryTests" time="0.002"/>
-  <testcase name="3) Contains required product IDs (1..5)" classname="shoppingCart.CreateStoreInventoryTests" time="0.0"/>
-  <testcase name="4) No extra product IDs beyond the required five" classname="shoppingCart.CreateStoreInventoryTests" time="0.002"/>
-  <testcase name="5) Each product has the correct name, price, and stock" classname="shoppingCart.CreateStoreInventoryTests" time="0.001"/>
+  <testcase name="3) Contains required product IDs (1..5)" classname="shoppingCart.CreateStoreInventoryTests" time="0.001"/>
+  <testcase name="4) No extra product IDs beyond the required five" classname="shoppingCart.CreateStoreInventoryTests" time="0.005"/>
+  <testcase name="5) Each product has the correct name, price, and stock" classname="shoppingCart.CreateStoreInventoryTests" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
