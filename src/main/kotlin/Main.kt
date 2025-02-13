@@ -11,7 +11,20 @@ package shoppingCart
  *   5 -> { "name"="Wireless Mouse", "price"=8.500, "stock"=15 },
  */
 fun createStoreInventory(): MutableMap<Int, MutableMap<String, Any>> {
-    TODO("Implement createStoreInventory()")
+    val product1 : MutableMap<String, Any> = mutableMapOf("name" to "Laptop", "price" to 350.000, "stock" to 10 );
+    val product2 : MutableMap<String, Any> = mutableMapOf("name" to "Smart TV", "price" to 200.000, "stock" to 5);
+    val product3 : MutableMap<String, Any> = mutableMapOf("name"  to "Headphones", "price" to 50.000, "stock" to 20);
+    val product4 : MutableMap<String, Any> = mutableMapOf("name" to "Gaming Console", "price" to 150.000, "stock" to 8);
+    val product5 : MutableMap<String, Any> = mutableMapOf("name" to "Wireless Mouse", "price" to 8.500, "stock" to 15);
+
+    val storeInventory = mutableMapOf(
+        1 to product1,
+        2 to product2,
+        3 to product3,
+        4 to product4,
+        5 to product5,
+    )
+    return storeInventory
 }
 
 /**
@@ -25,8 +38,34 @@ fun addToCart(
     productId: Int,
     quantity: Int
 ): Boolean {
-    TODO("Implement addToCart()")
+
+
+    val storeQuantity = storeInventory[productId]?.get("stock")
+
+    if (storeInventory.containsKey(productId)) {
+        if (storeQuantity.toString().toInt() != null && storeQuantity.toString().toInt() >= quantity) {
+            var updatedStoreQuantity = storeQuantity.toString().toInt()
+            updatedStoreQuantity = updatedStoreQuantity - quantity
+
+            storeInventory[productId]?.put("stock", updatedStoreQuantity)
+
+            //cart updated
+            var updatedCartQuantity = cart[productId]?: 0
+            updatedCartQuantity = updatedCartQuantity + quantity
+
+            cart.put(productId, updatedCartQuantity)
+
+            return true
+
+        } else {
+
+            return false
+        }
+    } else {
+        return false
+    }
 }
+
 
 /**
  * Removes [quantity] of [productId] from [cart], restoring the same amount to [storeInventory].
@@ -39,8 +78,24 @@ fun removeFromCart(
     productId: Int,
     quantity: Int
 ): Boolean {
-    TODO("Implement removeFromCart()")
+
+    val cartQuantity = cart[productId]?: 0
+
+    if (cartQuantity == productId) {
+        if (cartQuantity >= quantity) {
+
+
+            return true
+
+        } else {
+
+            return false
+        }
+    } else {
+        return false
+    }
 }
+
 
 /**
  * Calculates the total cost of items in [cart].
