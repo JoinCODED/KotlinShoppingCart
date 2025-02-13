@@ -33,7 +33,7 @@ jobs:
           # Gradle outputs JUnit XML to build/test-results/test/ by default
           path: '**/build/test-results/test/*.xml'
           # "junit" is the correct reporter for JUnit-style XML
-          reporter: 'junit'
+          reporter: 'java-junit'
           fail-on-error: true
           # fail-on-empty: true means fail if no test results are found
           fail-on-empty: true
