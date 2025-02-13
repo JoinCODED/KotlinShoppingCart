@@ -1,0 +1,1 @@
+C:\Users\Snake\IdeaProjects\ShoppingCart\build\classes\kotlin\main\shoppingCart\MainKt.class
