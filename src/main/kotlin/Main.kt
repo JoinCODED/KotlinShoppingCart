@@ -116,7 +116,9 @@ fun filterProductsByName(
     storeInventory: MutableMap<Int, MutableMap<String, Any>>,
     keyword: String
 ): List<Int> {
-TODO()
+ val lista= storeInventory.filter { it.value.get("name").toString().contains(keyword, ignoreCase = true)}
+    return lista.keys.toList()
+
 //    storeInventory.forEach{ (t,u )-> u.keys.find(it.contains(keyword)) }
 //    storeInventory.filter {  }
 }
