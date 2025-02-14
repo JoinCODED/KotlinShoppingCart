@@ -1,7 +1,7 @@
 name: Build and Test
 
 on:
-  pull_request:
+  pull_request_target:  # ✅ Change this from `pull_request` to `pull_request_target`
     branches: [ "main" ]
 
 jobs:
@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}  # ✅ This ensures we still check out the student's fork
 
       - name: Set up JDK
         uses: actions/setup-java@v3
@@ -20,20 +22,15 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build and Test with Gradle
-        # 'continue-on-error: true' so we can still parse results if tests fail
         run: ./gradlew clean test --console=plain
         continue-on-error: true
 
       - name: Publish Test Report
-        if: always()  # ensure this step runs even if tests fail
+        if: always()
         uses: dorny/test-reporter@v1
         with:
-          # This name shows up in the Checks tab
           name: 'JUnit Tests'
-          # Gradle outputs JUnit XML to build/test-results/test/ by default
           path: '**/build/test-results/test/*.xml'
-          # "junit" is the correct reporter for JUnit-style XML
           reporter: 'java-junit'
           fail-on-error: true
-          # fail-on-empty: true means fail if no test results are found
           fail-on-empty: true
