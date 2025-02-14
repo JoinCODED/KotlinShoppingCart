@@ -1,4 +1,5 @@
 plugins {
+    // Use the Kotlin JVM plugin
     kotlin("jvm") version "1.8.20"
 }
 
@@ -22,12 +23,5 @@ tasks.withType<Test> {
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-nowarn")
-        jvmTarget = "17"  // Set Kotlin to use Java 17 compatibility
     }
-}
-
-// Set Java compatibility to Java 17
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
 }
