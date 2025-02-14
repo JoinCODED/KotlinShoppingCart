@@ -144,16 +144,7 @@ fun filterProductsByName(
     storeInventory: MutableMap<Int, MutableMap<String, Any>>,
     keyword: String
 ): List<Int> {
-
-    var name = storeInventory
-
-
-    for ((name) in storeInventory)
-    {
-       name.values
-    }
-
-
+    return storeInventory.filter { it.value["name"].toString().contains(keyword, ignoreCase = true)}.map { it.key}
 }
 
 /**
