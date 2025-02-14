@@ -14,6 +14,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
 }
 
+kotlin{
+    jvmToolchain(17)
+}
+
 tasks.withType<Test> {
     // Enable JUnit 5
     useJUnitPlatform()
