@@ -19,6 +19,10 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+kotlin{
+    jvmToolchain(17)
+}
+
 // Hide Kotlin parameter/variable warnings like “never used”
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions {
