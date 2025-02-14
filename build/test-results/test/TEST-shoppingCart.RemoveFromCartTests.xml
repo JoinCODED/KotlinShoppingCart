@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="shoppingCart.RemoveFromCartTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-02-13T17:29:02" hostname="Fs-MacBook-Pro" time="0.002">
+<testsuite name="shoppingCart.RemoveFromCartTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-02-14T08:12:36" hostname="Fs-MacBook-Pro" time="0.003">
   <properties/>
-  <testcase name="1) Removing a valid quantity updates cart and stock" classname="shoppingCart.RemoveFromCartTests" time="0.0"/>
+  <testcase name="1) Removing a valid quantity updates cart and stock" classname="shoppingCart.RemoveFromCartTests" time="0.001"/>
   <testcase name="2) Removing the full amount removes item from cart" classname="shoppingCart.RemoveFromCartTests" time="0.0"/>
-  <testcase name="3) Removing more than in cart should fail" classname="shoppingCart.RemoveFromCartTests" time="0.001"/>
-  <testcase name="4) Removing a product that isn't in the cart should fail" classname="shoppingCart.RemoveFromCartTests" time="0.0"/>
+  <testcase name="3) Removing more than in cart should fail" classname="shoppingCart.RemoveFromCartTests" time="0.0"/>
+  <testcase name="4) Removing a product that isn't in the cart should fail" classname="shoppingCart.RemoveFromCartTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

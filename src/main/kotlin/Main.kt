@@ -102,11 +102,9 @@ fun calculateTotal(
     storeInventory: MutableMap<Int, MutableMap<String, Any>>,
     cart: MutableMap<Int, Int>
 ): Double {
-//val total = 0
-//cart.forEach(entry -> entry.value )
-    TODO("Implement filterProductsByName()")
-
-// cart.forEach{item -> storeInventory.keys.find {  }}
+var total = 0.0
+    cart.forEach { (t, u) -> total += (storeInventory[t]?.get("price") as Double * u) }
+return total
 }
 
 /**
@@ -118,7 +116,9 @@ fun filterProductsByName(
     storeInventory: MutableMap<Int, MutableMap<String, Any>>,
     keyword: String
 ): List<Int> {
-    TODO("Implement filterProductsByName()")
+TODO()
+//    storeInventory.forEach{ (t,u )-> u.keys.find(it.contains(keyword)) }
+//    storeInventory.filter {  }
 }
 
 /**

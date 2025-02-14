@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="shoppingCart.FilterProductsByNameTests" tests="4" skipped="0" failures="4" errors="0" timestamp="2025-02-13T17:29:02" hostname="Fs-MacBook-Pro" time="0.005">
+<testsuite name="shoppingCart.FilterProductsByNameTests" tests="4" skipped="0" failures="4" errors="0" timestamp="2025-02-14T08:12:36" hostname="Fs-MacBook-Pro" time="0.005">
   <properties/>
-  <testcase name="1) Exact match on name should return correct IDs" classname="shoppingCart.FilterProductsByNameTests" time="0.001">
-    <failure message="kotlin.NotImplementedError: An operation is not implemented: Implement filterProductsByName()" type="kotlin.NotImplementedError">kotlin.NotImplementedError: An operation is not implemented: Implement filterProductsByName()
-	at shoppingCart.MainKt.filterProductsByName(Main.kt:121)
+  <testcase name="1) Exact match on name should return correct IDs" classname="shoppingCart.FilterProductsByNameTests" time="0.002">
+    <failure message="kotlin.NotImplementedError: An operation is not implemented." type="kotlin.NotImplementedError">kotlin.NotImplementedError: An operation is not implemented.
+	at shoppingCart.MainKt.filterProductsByName(Main.kt:119)
 	at shoppingCart.FilterProductsByNameTests.testExactMatch(FilterProductsByNameTests.kt:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
@@ -88,8 +88,8 @@
 </failure>
   </testcase>
   <testcase name="2) Partial substring match is case-insensitive" classname="shoppingCart.FilterProductsByNameTests" time="0.001">
-    <failure message="kotlin.NotImplementedError: An operation is not implemented: Implement filterProductsByName()" type="kotlin.NotImplementedError">kotlin.NotImplementedError: An operation is not implemented: Implement filterProductsByName()
-	at shoppingCart.MainKt.filterProductsByName(Main.kt:121)
+    <failure message="kotlin.NotImplementedError: An operation is not implemented." type="kotlin.NotImplementedError">kotlin.NotImplementedError: An operation is not implemented.
+	at shoppingCart.MainKt.filterProductsByName(Main.kt:119)
 	at shoppingCart.FilterProductsByNameTests.testPartialSubstring(FilterProductsByNameTests.kt:30)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
@@ -173,9 +173,9 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="3) No match returns an empty list" classname="shoppingCart.FilterProductsByNameTests" time="0.001">
-    <failure message="kotlin.NotImplementedError: An operation is not implemented: Implement filterProductsByName()" type="kotlin.NotImplementedError">kotlin.NotImplementedError: An operation is not implemented: Implement filterProductsByName()
-	at shoppingCart.MainKt.filterProductsByName(Main.kt:121)
+  <testcase name="3) No match returns an empty list" classname="shoppingCart.FilterProductsByNameTests" time="0.0">
+    <failure message="kotlin.NotImplementedError: An operation is not implemented." type="kotlin.NotImplementedError">kotlin.NotImplementedError: An operation is not implemented.
+	at shoppingCart.MainKt.filterProductsByName(Main.kt:119)
 	at shoppingCart.FilterProductsByNameTests.testNoResults(FilterProductsByNameTests.kt:40)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
@@ -259,9 +259,9 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="4) Multiple items can match a keyword" classname="shoppingCart.FilterProductsByNameTests" time="0.002">
-    <failure message="kotlin.NotImplementedError: An operation is not implemented: Implement filterProductsByName()" type="kotlin.NotImplementedError">kotlin.NotImplementedError: An operation is not implemented: Implement filterProductsByName()
-	at shoppingCart.MainKt.filterProductsByName(Main.kt:121)
+  <testcase name="4) Multiple items can match a keyword" classname="shoppingCart.FilterProductsByNameTests" time="0.0">
+    <failure message="kotlin.NotImplementedError: An operation is not implemented." type="kotlin.NotImplementedError">kotlin.NotImplementedError: An operation is not implemented.
+	at shoppingCart.MainKt.filterProductsByName(Main.kt:119)
 	at shoppingCart.FilterProductsByNameTests.testMultipleMatches(FilterProductsByNameTests.kt:49)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
