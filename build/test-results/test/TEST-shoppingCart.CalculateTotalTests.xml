@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="shoppingCart.CalculateTotalTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-02-14T19:57:27" hostname="Mac" time="0.001">
+  <properties/>
+  <testcase name="1) Total is 0.0 if cart is empty" classname="shoppingCart.CalculateTotalTests" time="0.0"/>
+  <testcase name="2) Single item in cart calculates correctly" classname="shoppingCart.CalculateTotalTests" time="0.0"/>
+  <testcase name="3) Multiple items in cart adds up correctly" classname="shoppingCart.CalculateTotalTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
