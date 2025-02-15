@@ -40,7 +40,7 @@ fun addToCart(
     //TODO("Implement addToCart()")
 
     if(productId !in storeInventory.keys){
-        return false;
+        return false
     }
 
     val item = storeInventory[productId]
@@ -76,7 +76,7 @@ fun removeFromCart(
     //TODO("Implement removeFromCart()")
 
     if(productId !in storeInventory.keys){
-        return false;
+        return false
     }
 
     val item = storeInventory[productId]
@@ -84,7 +84,7 @@ fun removeFromCart(
     var stock: Int = item?.getValue("stock") as Int
 
     if(cart[productId] != null && cart[productId]!! >= quantity) {
-        cart[productId] = cart[productId]!! - quantity as Int
+        cart[productId] = cart[productId]!! - quantity
         stock += quantity
         storeInventory[productId]?.set("stock",stock)
 
@@ -96,7 +96,7 @@ fun removeFromCart(
         return true
 
     } else if(quantity >= stock && cart[productId]!! >= quantity){
-        cart[productId] = cart[productId]!! - quantity as Int
+        cart[productId] = cart[productId]!! - quantity
         stock += quantity
         storeInventory[productId]?.set("stock",stock)
 
@@ -121,7 +121,7 @@ fun calculateTotal(
 ): Double {
     //TODO("Implement calculateTotal()")
 
-    var sumOfCart: Double = 0.0
+    var sumOfCart = 0.0
     var inventory:Double?
 
     for(i in cart.keys){
