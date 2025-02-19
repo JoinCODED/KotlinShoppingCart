@@ -1,0 +1,49 @@
+#Stock of product ID 1 updated to 5
+,Product ID 1 quantity in cart updated to 5.
+)Successfully added product ID 1 to cart!
+$Stock of product ID 1 restored to 7
+-Product ID 1 quantity in cart decreased to 3
+2Successfully removed 2 of product ID 1 from cart!
+#Stock of product ID 1 updated to 5
+,Product ID 1 quantity in cart updated to 5.
+)Successfully added product ID 1 to cart!
+%Stock of product ID 1 restored to 10
+$Product ID 1 was removed from cart.
+2Successfully removed 5 of product ID 1 from cart!
+#Stock of product ID 1 updated to 5
+,Product ID 1 quantity in cart updated to 5.
+)Successfully added product ID 1 to cart!
+9Not enough quantity in cart. Requested: 10, Available: 5
+#Stock of product ID 1 updated to 5
+,Product ID 1 quantity in cart updated to 5.
+)Successfully added product ID 1 to cart!
+ Product ID 2 not found in cart.
+#Stock of product ID 1 updated to 8
+,Product ID 1 quantity in cart updated to 2.
+)Successfully added product ID 1 to cart!
+#Stock of product ID 1 updated to 8
+,Product ID 1 quantity in cart updated to 2.
+)Successfully added product ID 1 to cart!
+#Stock of product ID 1 updated to 5
+,Product ID 1 quantity in cart updated to 5.
+)Successfully added product ID 1 to cart!
+	 Product not found in inventory.
+
+/Not enough stock. Requested: 20, Available: 10
+Final total cost: 0.0
+#Stock of product ID 1 updated to 7
+,Product ID 1 quantity in cart updated to 3.
+)Successfully added product ID 1 to cart!
+Final total cost: 1050.0
+#Stock of product ID 1 updated to 8
+,Product ID 1 quantity in cart updated to 2.
+)Successfully added product ID 1 to cart!
+#Stock of product ID 2 updated to 4
+,Product ID 2 quantity in cart updated to 1.
+)Successfully added product ID 2 to cart!
+Final total cost: 900.0
+Matching product IDs: [1]
+Matching product IDs: [1]
+Matching product IDs: [1]
+Matching product IDs: []
+Matching product IDs: [3]
