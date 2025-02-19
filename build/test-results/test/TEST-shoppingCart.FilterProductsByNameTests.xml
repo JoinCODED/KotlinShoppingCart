@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="shoppingCart.FilterProductsByNameTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-02-14T20:08:12" hostname="MacBook-Pro.local" time="0.015">
+<testsuite name="shoppingCart.FilterProductsByNameTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-02-19T09:55:34" hostname="MacBook-Pro.local" time="0.037">
   <properties/>
-  <testcase name="1) Exact match on name should return correct IDs" classname="shoppingCart.FilterProductsByNameTests" time="0.008"/>
-  <testcase name="2) Partial substring match is case-insensitive" classname="shoppingCart.FilterProductsByNameTests" time="0.001"/>
+  <testcase name="1) Exact match on name should return correct IDs" classname="shoppingCart.FilterProductsByNameTests" time="0.025"/>
+  <testcase name="2) Partial substring match is case-insensitive" classname="shoppingCart.FilterProductsByNameTests" time="0.004"/>
   <testcase name="3) No match returns an empty list" classname="shoppingCart.FilterProductsByNameTests" time="0.001"/>
-  <testcase name="4) Multiple items can match a keyword" classname="shoppingCart.FilterProductsByNameTests" time="0.001"/>
+  <testcase name="4) Multiple items can match a keyword" classname="shoppingCart.FilterProductsByNameTests" time="0.002"/>
   <system-out><![CDATA[Matching product IDs: [1]
 Matching product IDs: [1]
 Matching product IDs: [1]

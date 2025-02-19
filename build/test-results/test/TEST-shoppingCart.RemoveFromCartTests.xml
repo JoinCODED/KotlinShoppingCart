@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="shoppingCart.RemoveFromCartTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-02-14T20:08:12" hostname="MacBook-Pro.local" time="0.011">
+<testsuite name="shoppingCart.RemoveFromCartTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-02-19T09:55:34" hostname="MacBook-Pro.local" time="0.085">
   <properties/>
-  <testcase name="1) Removing a valid quantity updates cart and stock" classname="shoppingCart.RemoveFromCartTests" time="0.003"/>
-  <testcase name="2) Removing the full amount removes item from cart" classname="shoppingCart.RemoveFromCartTests" time="0.002"/>
-  <testcase name="3) Removing more than in cart should fail" classname="shoppingCart.RemoveFromCartTests" time="0.001"/>
-  <testcase name="4) Removing a product that isn't in the cart should fail" classname="shoppingCart.RemoveFromCartTests" time="0.002"/>
+  <testcase name="1) Removing a valid quantity updates cart and stock" classname="shoppingCart.RemoveFromCartTests" time="0.066"/>
+  <testcase name="2) Removing the full amount removes item from cart" classname="shoppingCart.RemoveFromCartTests" time="0.003"/>
+  <testcase name="3) Removing more than in cart should fail" classname="shoppingCart.RemoveFromCartTests" time="0.003"/>
+  <testcase name="4) Removing a product that isn't in the cart should fail" classname="shoppingCart.RemoveFromCartTests" time="0.003"/>
   <system-out><![CDATA[Stock of product ID 1 updated to 5
 Product ID 1 quantity in cart updated to 5.
 Successfully added product ID 1 to cart!
-Stock of product ID 1 restored to 9.
-Product ID 1 quantity in cart decreased to 3.
+Stock of product ID 1 restored to 7
+Product ID 1 quantity in cart decreased to 3
 Successfully removed 2 of product ID 1 from cart!
 Stock of product ID 1 updated to 5
 Product ID 1 quantity in cart updated to 5.
 Successfully added product ID 1 to cart!
-Stock of product ID 1 restored to 15.
-Product ID 1 completely removed from cart.
+Stock of product ID 1 restored to 10
+Product ID 1 was removed from cart.
 Successfully removed 5 of product ID 1 from cart!
 Stock of product ID 1 updated to 5
 Product ID 1 quantity in cart updated to 5.
 Successfully added product ID 1 to cart!
-Not enough quantity in cart. Requested to remove: 10, Available: 5
+Not enough quantity in cart. Requested: 10, Available: 5
 Stock of product ID 1 updated to 5
 Product ID 1 quantity in cart updated to 5.
 Successfully added product ID 1 to cart!

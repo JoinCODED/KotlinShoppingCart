@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="shoppingCart.AddToCartTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-02-14T20:08:12" hostname="MacBook-Pro.local" time="0.044">
+<testsuite name="shoppingCart.AddToCartTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-02-19T09:55:34" hostname="MacBook-Pro.local" time="0.017">
   <properties/>
-  <testcase name="1) Valid add to cart (small quantity within stock)" classname="shoppingCart.AddToCartTests" time="0.031"/>
-  <testcase name="2) Adding multiple times accumulates in cart" classname="shoppingCart.AddToCartTests" time="0.002"/>
+  <testcase name="1) Valid add to cart (small quantity within stock)" classname="shoppingCart.AddToCartTests" time="0.002"/>
+  <testcase name="2) Adding multiple times accumulates in cart" classname="shoppingCart.AddToCartTests" time="0.004"/>
   <testcase name="3) Attempting to add a product with ID that doesn't exist" classname="shoppingCart.AddToCartTests" time="0.002"/>
-  <testcase name="4) Attempting to add more than available stock should fail" classname="shoppingCart.AddToCartTests" time="0.004"/>
+  <testcase name="4) Attempting to add more than available stock should fail" classname="shoppingCart.AddToCartTests" time="0.003"/>
   <system-out><![CDATA[Stock of product ID 1 updated to 8
 Product ID 1 quantity in cart updated to 2.
 Successfully added product ID 1 to cart!
